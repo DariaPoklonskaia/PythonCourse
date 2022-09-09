@@ -67,12 +67,23 @@
 
 #Ex5. Реализуйте алгоритм перемешивания списка.
 
-import random
+# import random
  
-y = [1, 2, 3, 4]
-random.shuffle(y)
+# y = [1, 2, 3, 4]
+# random.shuffle(y)
  
-print(y)
+# print(y)
 
+#Ex5. Var2. Реализуйте алгоритм перемешивания списка. 
+from random import randint
 
+any_list = [1, 2, 3, 4, 5, 6]
+
+for i in range(len(any_list)):
+    j = randint(0, len(any_list))
+    temp = any_list[i]
+    any_list[i] = any_list[j]
+    any_list[j] = temp
+
+print(any_list)
 
