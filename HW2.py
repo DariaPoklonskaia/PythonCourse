@@ -1,28 +1,28 @@
 #Ex1. Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр. 0,56 -> 11
 
-# number = float(input('Inter number: '))
+number = float(input('Inter number: '))
 
-# after_point = str(number)
+after_point = str(number)
 
-# for i in range (len(after_point)):
-#     after_point = after_point[after_point.find('.'):]
+for i in range (len(after_point)):
+    after_point = after_point[after_point.find('.'):]
 
-# print(after_point)
-# print(len(after_point))
+print(after_point)
+print(len(after_point))
 
-# number = number * (10 ** (len(after_point) - 1))
+number = number * (10 ** (len(after_point) - 1))
 
-# print(number)
+print(number)
 
-# def SumOfDigits(num):
-#     sum = 0
-#     while num != 0:
-#             sum = sum + int(num%10)
-#             num = num/10
+def SumOfDigits(num):
+    sum = 0
+    while num != 0:
+            sum = sum + int(num%10)
+            num = num/10
 
-#     return sum
+    return sum
 
-# print(SumOfDigits(number))
+print(SumOfDigits(number))
 
 #Ex2. Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N
 
@@ -75,15 +75,15 @@
 # print(y)
 
 #Ex5. Var2. Реализуйте алгоритм перемешивания списка. 
-from random import randint
+# from random import randint
 
-any_list = [1, 2, 3, 4, 5, 6]
+# any_list = [1, 2, 3, 4, 5, 6]
 
-for i in range(len(any_list)):
-    j = randint(0, len(any_list))
-    temp = any_list[i]
-    any_list[i] = any_list[j]
-    any_list[j] = temp
+# for i in range(len(any_list)):
+#     j = randint(0, len(any_list))
+#     temp = any_list[i]
+#     any_list[i] = any_list[j]
+#     any_list[j] = temp
 
-print(any_list)
+# print(any_list)
 
