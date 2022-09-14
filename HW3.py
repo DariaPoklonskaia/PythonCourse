@@ -33,44 +33,120 @@
 # [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
 
-floatNumbers = [1.1, 2.2024, 3.105, 5, 10.0001]
+# floatNumbers = [-1.1, -2.2024, 3.105, 5, 10.0001]
 
-newlist = [] 
-for i in range(len(floatNumbers)):
-    fractionPart = floatNumbers[i] % 1
-    count = 0
-    while floatNumbers[i] % 1 > 0:
-        floatNumbers[i]*=10
-        count += 1
-    fractionPart = round(fractionPart, count)
-    newlist.append(fractionPart)
+# newlist = [] 
+# for i in range(len(floatNumbers)):
+#     if floatNumbers[i] < 0:
+#         floatNumbers[i] = -1 * floatNumbers[i]
+#     fractionPart = floatNumbers[i] % 1
+#     count = 0
+#     while floatNumbers[i] % 1 > 0:
+#         floatNumbers[i]*=10
+#         count += 1
+#     fractionPart = round(fractionPart, count)
+#     newlist.append(fractionPart)
 
-print(newlist)
+# print(newlist)
 
-def findMax(anylist):
-    max = anylist[0]
-    for i in range(1, len(anylist)):
-        if anylist[i] > max:
-            max = anylist[i]
-    return max
+# def findMax(anylist):
+#     max = anylist[0]
+#     for i in range(1, len(anylist)):
+#         if anylist[i] > max:
+#             max = anylist[i]
+#     return max
 
-def findMin(anyanylist):
-    min = anyanylist[0]
-    for i in range(1, len(anyanylist)):
-        if anyanylist[i] != 0:
-            if anyanylist[i] < min:
-                min = anyanylist[i]
-    return min
+# def findMin(anyanylist):
+#     min = anyanylist[0]
+#     for i in range(1, len(anyanylist)):
+#         if anyanylist[i] != 0:
+#             if anyanylist[i] < min:
+#                 min = anyanylist[i]
+#     return min
 
 
-diff = findMax(newlist) - findMin(newlist)
+# diff = findMax(newlist) - findMin(newlist)
 
-roundMax = len(str(findMax(newlist))) - 2
-roundMin = len(str(findMin(newlist))) - 2
+# roundMax = len(str(findMax(newlist))) - 2
+# roundMin = len(str(findMin(newlist))) - 2
 
-if roundMax > roundMin:
-    diff = round(diff, roundMax)
-else:
-    diff = round(diff, roundMin)
+# if roundMax > roundMin:
+#     diff = round(diff, roundMax)
+# else:
+#     diff = round(diff, roundMin)
 
-print(diff)
+# print(diff)
+
+
+# Ex4. Напишите программу, которая будет преобразовывать десятичное число в двоичное. 45 -> 101101
+
+
+# n_10 = int(input('введите десятичное число: '))
+
+# newSyst = 2
+# N_new = 0
+
+# if n_10 >= newSyst:
+#     i = 0
+#     quotient = n_10
+#     while quotient != 0:
+#         quotient = n_10//newSyst
+#         residual = n_10 - quotient*newSyst
+#         N_new = N_new + residual*(10**(i))
+#         i += 1
+#         n_10 = quotient
+# else:
+#     N_new = n_10
+
+# print(N_new)
+
+# Ex5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов
+
+
+
+num = int(input('введите натуральное число: '))
+
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n in (1,2):
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+def negaFib(k):
+    if k == 1:
+        return 1
+    elif k == 2:
+        return -1
+    else:
+        return negaFib(k-2) - negaFib(k-1)
+
+
+list = []
+listNega = []
+
+for e in range(0, num + 1):
+    list.append(fib(e))
+
+
+for i in range(1, num + 1):
+    listNega.append(negaFib(i))
+
+
+def revertlist(list1):
+    i = 0
+    j = len(list1) - 1
+    while i <= j:
+        temp = list1[i]
+        list1[i] = list1[j]
+        list1[j] = temp
+        i +=1
+        j = len(list1) - 1 - i
+    return list1  
+
+        
+listresult = revertlist(listNega) + list
+
+print(listresult)
