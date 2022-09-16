@@ -29,11 +29,11 @@ print(SumOfDigits(number))
 
 # number = int(input('Inter number: '))
 
-# list1 = []
+# list1 = [1]
 # product = 1
 
-# for i in range(1, number+1):
-#     list1.append(product)
+# for i in range(2, number+1):
+#     list1.append(product[-1]) #[-1] означает что всегда в конце будет добавляться
 #     product = product * (i+1)
     
 # print(list1)
@@ -80,7 +80,7 @@ print(SumOfDigits(number))
 # any_list = [1, 2, 3, 4, 5, 6]
 
 # for i in range(len(any_list)):
-#     j = randint(0, len(any_list))
+#     j = randint(0, len(any_list)-1)
 #     temp = any_list[i]
 #     any_list[i] = any_list[j]
 #     any_list[j] = temp
