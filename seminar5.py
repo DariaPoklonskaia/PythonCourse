@@ -131,10 +131,35 @@
 # print(a)
 
 #EX2. НОД. var2
-a = 27
-b = 21
+# a = 27
+# b = 21
 
-while b!=0:
-    a, b = b, a % b
+# while b!=0:
+#     a, b = b, a % b
 
-print(a)
+# print(a)
+
+#EX3. В файле находится N натуральных чисел, записанных через пробел. 
+# Среди чисел не хватает одного, чтобы выполнялось условие A[i] - 1 = A[i-1]. Найдите это число
+
+# n = open('numbers.txt', 'r')
+# lst = [int(i) for i in n.readline().split()]
+# for i in range(1, len(lst)):
+#     if lst[i] - lst[i-1] > 1:
+#         lst.insert(i, (lst[i] - 1))
+# n.close()
+
+# print(lst)
+
+# если у функции f(x)  в return записано сразу две переменных return value1, value2. то далее можно писать так  при обращении к методу a, b = f(x, y)
+
+#EX4. Напишите программу, удаляющую из текста все слова, содержащие "абв"
+
+with open("words.txt", "r") as fin:
+    for line in fin:
+        words = line.split()
+        for word in words:
+            if "abc" in word:
+                words.remove(word)
+        sentence = " ".join(words)
+        print(sentence)
