@@ -115,9 +115,10 @@ def PlayXO():
         else:
             sign = '0'
         print("player" + sign)
-        a, b = int(input('Введите строку: ')), int(input('Введите столбец: '))
-        if a == '\n':
+        a =  int(input('Введите строку: ')) 
+        if a == -1:
             break
+        b = int(input('Введите столбец: '))
         XO[a][b] = sign
 
         for i in range(len(XO)):
