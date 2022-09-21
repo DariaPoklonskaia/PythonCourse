@@ -48,48 +48,106 @@
 
 #Ex2б.Создайте программу для игры с конфетами человек против человека. Подумайте как наделить бота ""интеллектом"". Жеребьевка.
 
-from random import randint
+# from random import randint
 
-Qcandy = 2021
-m = 28
+# Qcandy = 2021
+# m = 28
 
 
-def WhoTakesLast(Q, step):
-    winner = ""
-    i = randint(1, 2)
-    print(i)
-    while Q > 0:
-        if i == 1:                     #первый ход у человека
-            if Q <= step:
-                user1 = Q
-            else:
-                user1 = randint(1, step)
-            Q = Q - user1
-            print(Q, "игрок1", end = ' ')
-            if Q == 0:
-                winner = "Игрок1"
+# def WhoTakesLast(Q, step):
+#     winner = ""
+#     i = randint(1, 2)
+#     print(i)
+#     while Q > 0:
+#         if i == 1:                     #первый ход у человека
+#             if Q <= step:
+#                 user1 = Q
+#             else:
+#                 user1 = randint(1, step)
+#             Q = Q - user1
+#             print(Q, "игрок1", end = ' ')
+#             if Q == 0:
+#                 winner = "Игрок1"
             
             
-            bot = Q % (step + 1)
-            if bot == 0:
-                bot = randint(1, step)
-            Q = Q - bot
-            print(Q, end = ' ')
-            if Q == 0:
-                winner = "Выиграл bot"
+#             bot = Q % (step + 1)
+#             if bot == 0:
+#                 bot = randint(1, step)
+#             Q = Q - bot
+#             print(Q, end = ' ')
+#             if Q == 0:
+#                 winner = "Выиграл bot"
 
-        else:                        #первый ход у бота
-            bot = Q % (step + 1)
-            Q = Q - bot
-            print(Q, end = ' ')
-            if Q == 0:
-                winner = "Выиграл bot"
+#         else:                        #первый ход у бота
+#             bot = Q % (step + 1)
+#             Q = Q - bot
+#             print(Q, end = ' ')
+#             if Q == 0:
+#                 winner = "Выиграл bot"
 
-            user1 = randint(1, step)
-            Q = Q - user1
-            print(Q, end = ' ')
-            if Q == 0:
-                winner = "Игрок1"
-    return winner
+#             user1 = randint(1, step)
+#             Q = Q - user1
+#             print(Q, end = ' ')
+#             if Q == 0:
+#                 winner = "Игрок1"
+#     return winner
 
-print(WhoTakesLast(Qcandy, m))
+# print(WhoTakesLast(Qcandy, m))
+
+#Ex3. Крестики-нолики. Simple version
+
+from itertools import count
+
+
+XO = [['+', '+', '+' ],['+', '+', '+'],['+', '+', '+'] ]
+
+for i in range(len(XO)):
+    for j in range(len(XO[i])):
+        print(XO[i][j], end=' ')
+    print()
+
+
+def PlayXO():
+    count = 0
+    while True:
+        if count%2 == 0:
+            sign = 'X'
+        else:
+            sign = '0'
+        print("player" + sign)
+        a, b = int(input('Введите строку: ')), int(input('Введите столбец: '))
+        if a == '\n':
+            break
+        XO[a][b] = sign
+
+        for i in range(len(XO)):
+            for j in range(len(XO[i])):
+                print(XO[i][j], end=' ')
+            print()
+
+        count += 1
+
+        
+        # for i in range(len(XO)):
+        #     if XO[i][0] == XO[i][1] == XO[i][2] == "X" or "0":
+        #         print("you win")
+        #         break 
+        # for j in range(len(XO[i])):
+        #     if XO[0][j] == XO[1][j] == XO[2][j] == "X" or "0":
+        #         print("you win")
+        #         break
+        # if XO[0,0] == XO[1, 1] == XO[2, 2] == "X" or "0":
+        #    print("you win")
+        #    break 
+
+        # if XO[0,2] == XO[1, 1] == XO[2, 0] == "X" or "0":
+        #    print("you win")
+        #    break 
+
+PlayXO()
+
+
+
+
+
+    
