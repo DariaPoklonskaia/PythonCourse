@@ -30,7 +30,7 @@
 # result = []
 
 # for i in list1:
-#     if i not in result:
+#     if i not in result: # функция count - считает количество вхождений. if list1.count(i) == 1
 #         result.append(i)
 
 # print(result)
@@ -44,33 +44,33 @@
 #Ex4. Задана натуральная степень k. Сформировать случайным образом список коэффициентов (значения от 0 до 100) 
 # многочлена и записать в файл многочлен степени k.
 
-# from random import randint
+from random import randint
 
 
-# powerK = int(input('Задайте натуральную степень k: '))
+powerK = int(input('Задайте натуральную степень k: '))
 
-# coeff = []
+coeff = []
 
-# def Coefficient(k):
-#     for i in range(powerK + 1):
-#         num = randint(0, 100)
-#         coeff.append(num)
-#     return coeff
+def Coefficient(k):
+    for i in range(powerK + 1):
+        num = randint(0, 100)
+        coeff.append(num)
+    return coeff
     
-# coeff = Coefficient(powerK)
-# print(coeff)
+coeff = Coefficient(powerK)
+print(coeff)
 
-# f = open('coefficients.txt', 'w')
-# for i in range(0, powerK + 1):
-#     a = str(coeff[i])
-#     b = '^' + str(powerK)
-#     if powerK == 0:
-#         f.write(a)
-#     else:
-#         f.write(a + 'x' + b + ' + ')
-#     powerK = powerK-1
+f = open('coefficients.txt', 'w')
+for i in range(0, powerK + 1):
+    a = str(coeff[i])
+    b = '^' + str(powerK)
+    if powerK == 0:
+        f.write(a)
+    else:
+        f.write(a + 'x' + b + ' + ')
+    powerK = powerK-1
     
-# f.close() #можно еще добавиь условие если коэффициент равен нулю
+f.close() #можно еще добавиь условие если коэффициент равен нулю
 
 #Ex5. Даны два файла, в каждом из которых находится запись многочлена. Задача - сформировать файл, содержащий сумму многочленов.
 

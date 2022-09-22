@@ -145,7 +145,7 @@
 
 # res = map(int, data)
 
-# res = filter(lambda x: not x%2, res)
+# res = filter(lambda x: not x%2,  )
 # res = list(map(lambda x: (x, x**2), res))
 # print(res)
 
